@@ -1,0 +1,20 @@
+<p>appointment works!</p>
+<button class="btn" (click)="getData()">sadasdad</button>
+<div *ngIf="appointmentData.length==0">
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit nobis corrupti beatae, libero doloribus quibusdam
+        officia dolores saepe ipsam veniam doloremque, dolorum et est? Culpa consequuntur mollitia nostrum doloremque
+        odio!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, sit aliquid. Qui officia consequatur atque
+        doloribus, esse quas provident iure est excepturi eligendi dolorum quos voluptatem a dignissimos quasi incidunt
+        nisi architecto corporis, quisquam quam! Laborum impedit debitis atque dignissimos doloremque nesciunt quod,
+        aspernatur eius ad sit veritatis perferendis exercitationem non libero veniam accusantium beatae! Fugiat,
+        aliquam. Quae voluptas explicabo porro assumenda eligendi sed praesentium at aperiam facere possimus fugiat
+        quisquam quas soluta non, perspiciatis, expedita aliquam odio corporis eum. Alias a magni doloribus labore
+        atque, reiciendis sapiente, nisi sit minus, eligendi officiis dolor temporibus molestiae accusantium quas
+        asperiores similique.</p>
+</div>
+<div *ngIf="appointmentData.length!=0">
+    <div class="card" *ngFor="let v of appointmentData">
+        <img src="{{v.imgUrl}}" alt="">
+    </div>
+</div>

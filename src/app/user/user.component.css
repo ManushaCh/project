@@ -1,0 +1,34 @@
+.img:hover{
+    position: relative;
+    bottom: 3px;
+    left: 3px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 20px 2px #313131;
+}
+.img{
+    border-radius: 50%;
+}
+
+.card{
+background-color: #EDF2FB  ;
+}
+.btn{
+    background-color: #06c706;
+}
+.btn:hover{
+    background-color: white;
+    color: #06c706;
+    border: 1px solid #06c706;
+}
+
+
+@media only screen and (min-width:700px) {
+    .container1{
+        display: none;
+    }
+}
+@media only screen and (max-width:700px) {
+    .container2{
+        display: none;
+    }
+}

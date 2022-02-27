@@ -1,0 +1,3 @@
+GET http://localhost:2000/doctor/getdoctors
+###
+GET http://localhost:2000/doctor/getdoctors/Sanjay
