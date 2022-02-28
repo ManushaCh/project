@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="col card-body">
-                        <button class="btn w-75 mb-4 d-block mx-auto btn-outline-light" (click)="goToModal(v.username)">Book Appointment</button>
+                        <button class="btn w-75 mb-4 d-block mx-auto btn-outline-light" data-bs-toggle="modal" data-bs-target="#modal" (click)="goToModal(v.username)">Book Appointment</button>
                     </div>
                 </div>
             </div>
@@ -39,13 +39,47 @@
                         </div>
                     </div>
                     <div class="col d-flex justify-content-end align-items-end m-3">
-                        <button class="btn btn-outline-light" (click)="goToModal(v.username)">Book Appointment</button>
+                        <button class="btn btn-outline-light" (click)="goToModal(v.username)" data-bs-toggle="modal" data-bs-target="#modal">Book Appointment</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col">
-        <app-appointment></app-appointment>
+    
+</div>
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Book Appointment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
+            </div>
+            <div class="modal-body" *ngFor="let x of appointmentDataObj">
+                 <img class="d-block mx-auto docimg w-50" src="{{x.imgUrl}}" alt="">
+                  <p>Name: <span>{{x.name}}</span></p>
+                  <p>Specialization: <span>{{x.specialization}}</span></p>
+                  <p>Consulatation Fee: <span>{{x.consultationFee}}</span></p>
+                 <form action=""    [formGroup]="appointmentForm">
+                    <div>
+                      <label for="date" class="form-label">Date of Appointment:</label>
+                      <input type="date" class="form-control" id="date" formControlName="date"
+                       >
+                    </div>
+                    <div>
+                      <label for="age" class="form-label">Timings</label>
+                      <select class="form-select" formControlName="timmings">
+                        <option selected>Select Timmings</option>
+                        <option value="9 AM">9 AM</option>
+                        <option value="11 AM">11 AM</option>
+                        <option value="2 PM">2 PM</option>
+                      </select>
+                    </div>
+                    <button type="button" (click)="onSubmit()" class="btn btn-success d-block mx-auto mt-3 " (click)="goToAccountPage()" data-bs-dismiss="modal" >Confirm and Pay</button>
+                  </form>
+                </div>
+        </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>

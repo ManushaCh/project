@@ -10,7 +10,15 @@ export class GetdoctorsService {
 
   doctorBehaviourSubject=new BehaviorSubject(null);
 
-  doctorObservable=this.doctorBehaviourSubject.asObservable();
+ getDoctorData(){
+   return this.doctorBehaviourSubject
+ }
+
+
+ accountBehaviourSubject=new BehaviorSubject(null);
+ getAccountPageDetails(){
+   return this.accountBehaviourSubject
+ }
 
 
 
