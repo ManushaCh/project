@@ -1,9 +1,9 @@
 <div class="d-flex justify-content-end align-items-end m-3">
-    <h3 class="bg-success wallet p-2 text-light"><i class="bi bi-wallet2"></i> {{wallet}}</h3>
+    <h3 class="bg-success wallet p-2 text-light">Wallet Balance   <i class="bi bi-wallet2"></i>{{wallet}}</h3>
 </div>
 
 
-<div class="card w-75 p-2 mx-auto d-block" *ngFor="let v of accountDetails">
+<div class="card rounded w-75 p-2 mx-auto d-block" *ngFor="let v of accountDetails">
     <div class="row">
         <h1>Appointment-Details:</h1>
         <div class="col">
@@ -19,7 +19,8 @@
                 <h3>{{v.doctorname}}</h3>
                 <h3>{{v.timmings}}</h3>
                 <h3>{{v.date}}</h3>
-                <h3>{{v.consultationFee}}</h3>
+                <h3><img
+                    src="https://img.icons8.com/material-sharp/24/000000/rupee.png" class="img" />{{v.consultationFee}}</h3>
             </div>
         </div>
     </div>
@@ -60,17 +61,27 @@
 
 
 
-<div class="card p-5 mt-4">
-    <h2>Top-Up:</h2>
+<div class="card rounded p-5 mt-4">
+    <h2>Add Money to Wallet</h2>
+    <form action="" [formGroup]="AddMOney">
+        <div>
+            <input type="number" class="form-control rounded" formControlName="addMoney"  [(ngModel)]="value">
+        
+        </div>
+    </form>
     <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3">
         <div class="col">
-            <button class="btn btn-success" (click)="addToWallet(500)">500</button>
+            <button class="btn btn-success" (click)="addToInput(500)"><img
+                src="https://img.icons8.com/material-sharp/24/000000/rupee.png" class="img" />500</button>
         </div>
         <div class="col">
-            <button (click)="addToWallet(1000)" class="btn btn-success">1000</button>
+            <button (click)="addToInput(1000)" class="btn btn-success"><img
+                src="https://img.icons8.com/material-sharp/24/000000/rupee.png" class="img" />1000</button>
         </div>
         <div class="col">
-            <button (click)="addToWallet(2000)" class="btn btn-success">2000</button>
+            <button (click)="addToInput(2000)" class="btn btn-success"><img
+                src="https://img.icons8.com/material-sharp/24/000000/rupee.png" class="img"/>2000</button>
         </div>
     </div>
+    <button class="btn btn-success mt-3 mx-auto d-block" (click)="addToWallet()">Proceed To Add</button>
 </div>

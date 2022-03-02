@@ -11,7 +11,6 @@ const doctorSchema= new mongoose.Schema({
     experience:{type:Number,required:[true,"experience is required"]},
     name:{type:String,required:[true,"name is required"]}
     },
-    
     {collection:'doctorcollection'}
     )
 

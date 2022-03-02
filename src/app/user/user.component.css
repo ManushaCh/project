@@ -32,3 +32,20 @@ background-color: #EDF2FB  ;
         display: none;
     }
 }
+
+.doctorname{
+    color: rgb(0, 140, 255);
+    font-weight: lighter;
+}
+
+.details{
+    font-weight: lighter;
+}
+
+.modal-body{
+   background-image: url(../../assets/modal.jpg);
+   backdrop-filter: blur(20px);
+   background-size:cover;
+   color: white;
+   font-size: x-large;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { GetdoctorsService } from 'src/app/getdoctors.service';
 
@@ -15,9 +16,9 @@ export class AccountpageComponent implements OnInit {
   wallet: number = 1000;
 
   displayStyle="none";
-  value:number;
+  value:number=0;
 
-  constructor(public serviceObj: GetdoctorsService,public routerObj:Router) { }
+  constructor(public serviceObj: GetdoctorsService,public routerObj:Router,public fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.accountDetails.push(this.serviceObj.getAccountPageDetails().getValue())
@@ -28,12 +29,25 @@ export class AccountpageComponent implements OnInit {
   console.log(this.wallet);
   }
 
-  addToWallet(value){
-    this.value=+value;
-    this.wallet=this.wallet+this.value;
-    console.log(this.wallet);
+  addToInput(valuefromButton){
+    this.value=this.value+valuefromButton;
   }
 
+
+  AddMOney=this.fb.group({
+    addMoney:['']
+  })
+
+
+  addToWallet(){
+  let value=this.AddMOney.value.addMoney
+  console.log(this.AddMOney.value.addMoney);
+  
+  this.wallet=this.wallet+value
+  }
+
+
+  
 
 
 
